@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Mallgroup;
+namespace Bckp;
 
 function setenv(string $name, string|bool $value = false): void
 {

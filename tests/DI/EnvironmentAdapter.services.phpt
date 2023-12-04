@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-use Mallgroup\DI\Config\Adapters\EnvironmentAdapter;
+use Bckp\DI\Config\Adapters\EnvironmentAdapter;
 use Nette\DI\Definitions\Statement;
 use Nette\DI\InvalidConfigurationException;
 use Tester\Assert;
@@ -35,7 +35,7 @@ Assert::equal(
 								[
 										'service_user' => 'secret_user',
 										'service_password' => new Statement(
-												'Mallgroup\Environment::string',
+												'Bckp\Environment::string',
 												[
 														'name' => 'SERVICE_PASSWORD',
 														'default' => 'secret_password'

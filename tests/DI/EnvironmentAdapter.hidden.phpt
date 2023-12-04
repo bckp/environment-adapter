@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-use Mallgroup\DI\Config\Adapters\EnvironmentAdapter;
+use Bckp\DI\Config\Adapters\EnvironmentAdapter;
 use Nette\DI\Config;
 use Nette\DI\Definitions\Statement;
 use Tester\Assert;
@@ -16,7 +16,7 @@ require __DIR__ . '/../bootstrap.php';
 
 define('TEMP_FILE', getTempDir() . '/cfg.env');
 
-Mallgroup\setenv('SERVICE_ARRAY', '1|2');
+Bckp\setenv('SERVICE_ARRAY', '1|2');
 
 $config = new Config\Loader();
 $adapter = new EnvironmentAdapter();
@@ -38,7 +38,7 @@ Assert::equal([
 									  [
 											  'service_user' => 'secret_user',
 											  'service_password' => new Statement(
-													  'Mallgroup\Environment::string',
+													  'Bckp\Environment::string',
 													  [
 															  'name' => 'SERVICE_PASSWORD',
 															  'default' => 'secret_password'
@@ -48,7 +48,7 @@ Assert::equal([
 											  'service_nonstring' => '1234',
 											  'service_active' => false,
 											  'service_array' => new Statement(
-													  'Mallgroup\Environment::array',
+													  'Bckp\Environment::array',
 													  [
 															  'name' => 'SERVICE_ARRAY',
 															  'cast' => 'int',

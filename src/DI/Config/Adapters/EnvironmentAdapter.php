@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Mallgroup\DI\Config\Adapters;
+namespace Bckp\DI\Config\Adapters;
 
-use Mallgroup\Environment;
+use Bckp\Environment;
 use Nette\DI\Config\Adapter;
 use Nette\DI\Definitions\Statement;
 use Nette\DI\InvalidConfigurationException;
@@ -54,7 +54,7 @@ class EnvironmentAdapter implements Adapter
 			$attributes = $this->getAttributes($entity->attributes);
 
 			if ($entity->attributes['hidden'] ?? $entity->attributes[1] ?? false) {
-				$envs[$var] = new Statement("Mallgroup\Environment::$type", $this->extractStatementAttributes($name, $type, $attributes));
+				$envs[$var] = new Statement("Bckp\Environment::$type", $this->extractStatementAttributes($name, $type, $attributes));
 			} elseif ($type === 'array') {
 				$envs[$var] = Environment::array($name, $attributes['separator'] ?: '|', $attributes['cast']);
 			} else {

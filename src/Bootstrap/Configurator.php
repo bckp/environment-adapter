@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Mallgroup\Bootstrap;
+namespace Bckp\Bootstrap;
 
-use Mallgroup\DI\Config\Adapters\EnvironmentAdapter;
+use Bckp\DI\Config\Adapters\EnvironmentAdapter;
 use Nette\Bootstrap;
 use Nette\DI\Config\Loader;
 use function debug_backtrace;
